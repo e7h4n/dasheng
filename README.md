@@ -42,7 +42,7 @@ Keypoint:
 
 ## TODO
 
-[ ] Big Payload
-[ ] Fatigue test
-[ ] Memory Usage
-[ ] EMScripten Class Binding
+* [ ] Big Payload
+* [ ] Fatigue test
+* [ ] Memory Usage
+* [ ] EMScripten Class Binding
