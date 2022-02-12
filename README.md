@@ -5,6 +5,13 @@
 1. JavaScript -> WASM via ccall
 2. JavaScript -> WASM directly
 
+## 测试环境
+
+* 2018 Mac mini
+* Intel i7 3.2Ghz
+* 64G DDR4 2667 RAM
+* macOS Monterey 12.0.1
+
 ## 结果
 
 数值代表完成操作所需的时间，单位是毫秒，越低越好。
