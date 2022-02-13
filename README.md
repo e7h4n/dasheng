@@ -1,4 +1,4 @@
-# Emscripten 的 Binding 性能测试
+# WebAssembly 与 JS 调用的开销测试
 
 ## 对比代码
 
@@ -25,9 +25,9 @@
 
 Keypoint:
 
-* 过 Biding 的调用开销，在参数不复杂的情况下，大概是 0.001ms ~ 0.0001ms 这个数量级
-* 直接在堆上分配内存来传递参数的 binding 方式，对 ccall 有着一倍的性能提升
-* C++ 有着丰富的优化策略，大概是 Binding 的 3 倍性能
+* 过 Bridge 的调用开销，在参数不复杂的情况下，大概是每次调用 0.001ms ~ 0.0001ms 这个数量级
+* 直接在堆上分配内存来传递参数的调用方式，对 ccall 有着一倍的性能提升
+* C++ 内部调用是 JS -> WebAssembly 的 3 倍性能
 
 ## 场景
 
@@ -35,10 +35,12 @@ Keypoint:
 
 * 初始化 10k 个 element
 * 每个 element 30 个 attr
+* 每一轮大概 300k 次 js -> webassembly 请求
 
 ### 重排树
 
 * 对于 10k 个 element，每 100 个 element 重排成一颗子树
+* 每一轮大概 20k 次 js -> webassembly 请求
 
 ## TODO
 
